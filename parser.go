@@ -25,6 +25,7 @@ func NewParser(r io.Reader) *Parser {
 
 func (p *Parser) scan() (tok Token, lit string) {
 	if p.buf.n != 0 {
+		p.buf.n = 0
 		return p.buf.tok, p.buf.lit
 	}
 
